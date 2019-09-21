@@ -1,0 +1,103 @@
+Classfile /C:/Users/Case/Desktop/ByteCode/com.zmex.byteCodeExample/ByteCodeExample.class
+  Last modified Sep 17, 2019; size 612 bytes
+  MD5 checksum 58dcd0d0c88c9e4743d3b2080966bb8f
+  Compiled from "ByteCodeExample.java"
+class com.zmex.byteCodeExample.ByteCodeExample
+  minor version: 0
+  major version: 55
+  flags: (0x0020) ACC_SUPER
+  this_class: #7                          // com/zmex/byteCodeExample/ByteCodeExample
+  super_class: #8                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 3, attributes: 1
+Constant pool:
+   #1 = Methodref          #8.#19         // java/lang/Object."<init>":()V
+   #2 = Fieldref           #20.#21        // java/lang/System.out:Ljava/io/PrintStream;
+   #3 = String             #22            // Hello byte
+   #4 = Methodref          #23.#24        // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #5 = Methodref          #7.#25         // com/zmex/byteCodeExample/ByteCodeExample.printForCycle:()V
+   #6 = Methodref          #23.#26        // java/io/PrintStream.println:(I)V
+   #7 = Class              #27            // com/zmex/byteCodeExample/ByteCodeExample
+   #8 = Class              #28            // java/lang/Object
+   #9 = Utf8               <init>
+  #10 = Utf8               ()V
+  #11 = Utf8               Code
+  #12 = Utf8               LineNumberTable
+  #13 = Utf8               main
+  #14 = Utf8               ([Ljava/lang/String;)V
+  #15 = Utf8               printForCycle
+  #16 = Utf8               StackMapTable
+  #17 = Utf8               SourceFile
+  #18 = Utf8               ByteCodeExample.java
+  #19 = NameAndType        #9:#10         // "<init>":()V
+  #20 = Class              #29            // java/lang/System
+  #21 = NameAndType        #30:#31        // out:Ljava/io/PrintStream;
+  #22 = Utf8               Hello byte
+  #23 = Class              #32            // java/io/PrintStream
+  #24 = NameAndType        #33:#34        // println:(Ljava/lang/String;)V
+  #25 = NameAndType        #15:#10        // printForCycle:()V
+  #26 = NameAndType        #33:#35        // println:(I)V
+  #27 = Utf8               com/zmex/byteCodeExample/ByteCodeExample
+  #28 = Utf8               java/lang/Object
+  #29 = Utf8               java/lang/System
+  #30 = Utf8               out
+  #31 = Utf8               Ljava/io/PrintStream;
+  #32 = Utf8               java/io/PrintStream
+  #33 = Utf8               println
+  #34 = Utf8               (Ljava/lang/String;)V
+  #35 = Utf8               (I)V
+{
+  com.zmex.byteCodeExample.ByteCodeExample();
+    descriptor: ()V
+    flags: (0x0000)
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 3: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #3                  // String Hello byte
+         5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: invokestatic  #5                  // Method printForCycle:()V
+        11: return
+      LineNumberTable:
+        line 5: 0
+        line 6: 8
+        line 7: 11
+
+  public static void printForCycle();
+    descriptor: ()V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=0
+         0: iconst_0
+         1: istore_0
+         2: iload_0
+         3: bipush        20
+         5: if_icmpge     21
+         8: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        11: iload_0
+        12: invokevirtual #6                  // Method java/io/PrintStream.println:(I)V
+        15: iinc          0, 1
+        18: goto          2
+        21: return
+      LineNumberTable:
+        line 10: 0
+        line 11: 8
+        line 10: 15
+        line 13: 21
+      StackMapTable: number_of_entries = 2
+        frame_type = 252 /* append */
+          offset_delta = 2
+          locals = [ int ]
+        frame_type = 250 /* chop */
+          offset_delta = 18
+}
+SourceFile: "ByteCodeExample.java"

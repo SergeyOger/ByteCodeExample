@@ -1,0 +1,131 @@
+C:\Users\Case\Desktop\ByteCode> javap -v bin/com/zmex/byteCodeExample/ByteCodeExample
+Warning: File .\bin\com\zmex\byteCodeExample\ByteCodeExample.class does not contain class bin/com/zmex/byteCodeExample/ByteCodeExample
+Classfile /C:/Users/Case/Desktop/ByteCode/bin/com/zmex/byteCodeExample/ByteCodeExample.class
+  Last modified Sep 19, 2019; size 805 bytes
+  MD5 checksum 5890ead3aca13230a14bcce09c895dfe
+  Compiled from "ByteCodeExample.java"
+class com.zmex.byteCodeExample.ByteCodeExample
+  minor version: 0
+  major version: 55
+  flags: (0x0020) ACC_SUPER
+  this_class: #12                         // com/zmex/byteCodeExample/ByteCodeExample
+  super_class: #13                        // java/lang/Object
+  interfaces: 0, fields: 0, methods: 3, attributes: 1
+Constant pool:
+   #1 = Methodref          #13.#24        // java/lang/Object."<init>":()V
+   #2 = Fieldref           #25.#26        // java/lang/System.out:Ljava/io/PrintStream;
+   #3 = String             #27            // Hello byte
+   #4 = Methodref          #28.#29        // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #5 = Methodref          #12.#30        // com/zmex/byteCodeExample/ByteCodeExample.printForCycle:()V
+   #6 = Class              #31            // com/zmex/byteCodeExample/user/User
+   #7 = String             #32            // name
+   #8 = String             #33            // email
+   #9 = Methodref          #6.#34         // com/zmex/byteCodeExample/user/User."<init>":(Ljava/lang/String;ILjava/lang/String;)V
+  #10 = Methodref          #6.#35         // com/zmex/byteCodeExample/user/User.getUserName:()Ljava/lang/String;
+  #11 = Methodref          #28.#36        // java/io/PrintStream.println:(I)V
+  #12 = Class              #37            // com/zmex/byteCodeExample/ByteCodeExample
+  #13 = Class              #38            // java/lang/Object
+  #14 = Utf8               <init>
+  #15 = Utf8               ()V
+  #16 = Utf8               Code
+  #17 = Utf8               LineNumberTable
+  #18 = Utf8               main
+  #19 = Utf8               ([Ljava/lang/String;)V
+  #20 = Utf8               printForCycle
+  #21 = Utf8               StackMapTable
+  #22 = Utf8               SourceFile
+  #23 = Utf8               ByteCodeExample.java
+  #24 = NameAndType        #14:#15        // "<init>":()V
+  #25 = Class              #39            // java/lang/System
+  #26 = NameAndType        #40:#41        // out:Ljava/io/PrintStream;
+  #27 = Utf8               Hello byte
+  #28 = Class              #42            // java/io/PrintStream
+  #29 = NameAndType        #43:#44        // println:(Ljava/lang/String;)V
+  #30 = NameAndType        #20:#15        // printForCycle:()V
+  #31 = Utf8               com/zmex/byteCodeExample/user/User
+  #32 = Utf8               name
+  #33 = Utf8               email
+  #34 = NameAndType        #14:#45        // "<init>":(Ljava/lang/String;ILjava/lang/String;)V
+  #35 = NameAndType        #46:#47        // getUserName:()Ljava/lang/String;
+  #36 = NameAndType        #43:#48        // println:(I)V
+  #37 = Utf8               com/zmex/byteCodeExample/ByteCodeExample
+  #38 = Utf8               java/lang/Object
+  #39 = Utf8               java/lang/System
+  #40 = Utf8               out
+  #41 = Utf8               Ljava/io/PrintStream;
+  #42 = Utf8               java/io/PrintStream
+  #43 = Utf8               println
+  #44 = Utf8               (Ljava/lang/String;)V
+  #45 = Utf8               (Ljava/lang/String;ILjava/lang/String;)V
+  #46 = Utf8               getUserName
+  #47 = Utf8               ()Ljava/lang/String;
+  #48 = Utf8               (I)V
+{
+  com.zmex.byteCodeExample.ByteCodeExample();
+    descriptor: ()V
+    flags: (0x0000)
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 4: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=5, locals=2, args_size=1
+         0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #3                  // String Hello byte
+         5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: invokestatic  #5                  // Method printForCycle:()V
+        11: new           #6                  // class com/zmex/byteCodeExample/user/User
+        14: dup
+        15: ldc           #7                  // String name
+        17: bipush        26
+        19: ldc           #8                  // String email
+        21: invokespecial #9                  // Method com/zmex/byteCodeExample/user/User."<init>":(Ljava/lang/String;ILjava/lang/String;)V
+        24: astore_1
+        25: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        28: aload_1
+        29: invokevirtual #10                 // Method com/zmex/byteCodeExample/user/User.getUserName:()Ljava/lang/String;
+        32: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        35: return
+      LineNumberTable:
+        line 6: 0
+        line 7: 8
+        line 8: 11
+        line 9: 25
+        line 11: 35
+
+  public static void printForCycle();
+    descriptor: ()V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=0
+         0: iconst_0
+         1: istore_0
+         2: iload_0
+         3: bipush        20
+         5: if_icmpge     21
+         8: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        11: iload_0
+        12: invokevirtual #11                 // Method java/io/PrintStream.println:(I)V
+        15: iinc          0, 1
+        18: goto          2
+        21: return
+      LineNumberTable:
+        line 14: 0
+        line 15: 8
+        line 14: 15
+        line 17: 21
+      StackMapTable: number_of_entries = 2
+        frame_type = 252 /* append */
+          offset_delta = 2
+          locals = [ int ]
+        frame_type = 250 /* chop */
+          offset_delta = 18
+}
+SourceFile: "ByteCodeExample.java"
